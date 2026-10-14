@@ -973,7 +973,12 @@ func (vx *Vaxis) renderPrimary() {
 	forceRegionPaint := false
 	if primary.rendered {
 		moveRows := regionRows
-		if primary.resized && primary.visualRows > moveRows {
+		if primary.resized {
+			// memcode fork fix: on a region-height change move up by the OLD rendered height
+			// (visualRows), not the new one. Upstream moved up by the larger NEW height on a
+			// GROW, overshooting above the old region into scrollback and erasing it with
+			// \x1B[J. Using the old height positions at the old region top; the paint loop's
+			// \r\n then scrolls the terminal to make room, preserving scrollback.
 			moveRows = primary.visualRows
 		}
 		vx.moveToPrimaryRegionStart(moveRows)
