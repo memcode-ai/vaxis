@@ -1888,9 +1888,11 @@ func (vx *Vaxis) disableModes() {
 	if vx.caps.osc176 {
 		_, _ = vx.tw.WriteControlString(tparm(setAppID, vx.appIDLast))
 	}
-	if vx.caps.inBandResize {
-		_, _ = vx.tw.WriteControlString(decrst(inBandResize))
-	}
+	// UNCONDITIONAL, mirroring the blind decset in sendQueries: a terminal can enable
+	// mode 2048 without sending the immediate report that sets caps.inBandResize, and a
+	// caps-guarded reset then leaves the mode ON after exit — every later window resize
+	// sprays "CSI 48;rows;cols;h;w t" reports into the user's shell as literal garbage.
+	_, _ = vx.tw.WriteControlString(decrst(inBandResize))
 	// Most terminals default to "text" mouse shape
 	_, _ = vx.tw.WriteControlString(tparm(mouseShape, MouseShapeTextInput))
 }
