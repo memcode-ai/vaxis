@@ -4,8 +4,8 @@ import (
 	"image"
 	"os"
 
-	"go.rockorager.dev/vaxis"
-	"go.rockorager.dev/vaxis/widgets/align"
+	"github.com/memcode-ai/vaxis"
+	"github.com/memcode-ai/vaxis/widgets/align"
 )
 
 func main() {

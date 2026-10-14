@@ -3,7 +3,7 @@ package term
 import (
 	"strings"
 
-	"go.rockorager.dev/vaxis"
+	"github.com/memcode-ai/vaxis"
 )
 
 const (

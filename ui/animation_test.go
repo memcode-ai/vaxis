@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"go.rockorager.dev/vaxis/ui"
+	"github.com/memcode-ai/vaxis/ui"
 )
 
 type autoAnimationWidget struct {

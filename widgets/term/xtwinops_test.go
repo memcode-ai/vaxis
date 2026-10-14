@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"go.rockorager.dev/vaxis"
+	"github.com/memcode-ai/vaxis"
 )
 
 func TestXTWINOPSTextAreaSizeCharacters(t *testing.T) {

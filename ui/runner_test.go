@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"go.rockorager.dev/vaxis"
-	"go.rockorager.dev/vaxis/ui"
+	"github.com/memcode-ai/vaxis"
+	"github.com/memcode-ai/vaxis/ui"
 )
 
 type fakeBackend struct {

@@ -3,9 +3,9 @@ package main
 import (
 	"log"
 
-	"go.rockorager.dev/vaxis"
-	"go.rockorager.dev/vaxis/vxfw"
-	"go.rockorager.dev/vaxis/vxfw/button"
+	"github.com/memcode-ai/vaxis"
+	"github.com/memcode-ai/vaxis/vxfw"
+	"github.com/memcode-ai/vaxis/vxfw/button"
 )
 
 type App struct {

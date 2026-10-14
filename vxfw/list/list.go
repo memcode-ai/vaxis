@@ -4,8 +4,8 @@ import (
 	"math"
 	"slices"
 
-	"go.rockorager.dev/vaxis"
-	"go.rockorager.dev/vaxis/vxfw"
+	"github.com/memcode-ai/vaxis"
+	"github.com/memcode-ai/vaxis/vxfw"
 )
 
 // BuilderFunc is a function which takes

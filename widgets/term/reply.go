@@ -5,7 +5,7 @@ import (
 	"os"
 	"time"
 
-	"go.rockorager.dev/vaxis/log"
+	"github.com/memcode-ai/vaxis/log"
 )
 
 // termReply is a terminal-generated response to write back to the child PTY.

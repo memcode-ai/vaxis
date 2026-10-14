@@ -3,7 +3,7 @@ package main
 import (
 	"strconv"
 
-	"go.rockorager.dev/vaxis/ui"
+	"github.com/memcode-ai/vaxis/ui"
 )
 
 func main() {

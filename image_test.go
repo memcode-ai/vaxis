@@ -4,7 +4,7 @@ import (
 	"image/png"
 	"os"
 
-	"go.rockorager.dev/vaxis"
+	"github.com/memcode-ai/vaxis"
 )
 
 func ExampleImage() {

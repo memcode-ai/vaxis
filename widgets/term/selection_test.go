@@ -3,7 +3,7 @@ package term
 import (
 	"testing"
 
-	"go.rockorager.dev/vaxis"
+	"github.com/memcode-ai/vaxis"
 )
 
 func TestSelectionViewportSourceRows(t *testing.T) {

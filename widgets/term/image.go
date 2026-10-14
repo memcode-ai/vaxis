@@ -3,7 +3,7 @@ package term
 import (
 	"image"
 
-	"go.rockorager.dev/vaxis"
+	"github.com/memcode-ai/vaxis"
 )
 
 type Image struct {

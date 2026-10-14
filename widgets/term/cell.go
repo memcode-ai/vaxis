@@ -1,7 +1,7 @@
 package term
 
 import (
-	"go.rockorager.dev/vaxis"
+	"github.com/memcode-ai/vaxis"
 )
 
 type cell struct {

@@ -7,8 +7,8 @@ import (
 	"sync"
 	"testing"
 
-	"go.rockorager.dev/vaxis"
-	"go.rockorager.dev/vaxis/widgets/term"
+	"github.com/memcode-ai/vaxis"
+	"github.com/memcode-ai/vaxis/widgets/term"
 )
 
 type primaryConsole struct {

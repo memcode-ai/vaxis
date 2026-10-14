@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"go.rockorager.dev/vaxis"
-	"go.rockorager.dev/vaxis/widgets/list"
+	"github.com/memcode-ai/vaxis"
+	"github.com/memcode-ai/vaxis/widgets/list"
 )
 
 func ProduceLines(path string) ([]string, error) {

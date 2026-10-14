@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"go.rockorager.dev/vaxis/log"
+	"github.com/memcode-ai/vaxis/log"
 )
 
 func (vx *Vaxis) applyQuirks() {

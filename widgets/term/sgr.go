@@ -1,8 +1,8 @@
 package term
 
 import (
-	"go.rockorager.dev/vaxis"
-	"go.rockorager.dev/vaxis/ansi"
+	"github.com/memcode-ai/vaxis"
+	"github.com/memcode-ai/vaxis/ansi"
 )
 
 func (vt *Model) sgr(seq ansi.CSI) {

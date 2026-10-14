@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"go.rockorager.dev/vaxis"
-	"go.rockorager.dev/vaxis/log"
+	"github.com/memcode-ai/vaxis"
+	"github.com/memcode-ai/vaxis/log"
 )
 
 type Widget interface {

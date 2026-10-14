@@ -1,9 +1,9 @@
 package textfield
 
 import (
+	"github.com/memcode-ai/vaxis"
+	"github.com/memcode-ai/vaxis/vxfw"
 	"github.com/rockorager/go-uucode"
-	"go.rockorager.dev/vaxis"
-	"go.rockorager.dev/vaxis/vxfw"
 )
 
 type TextField struct {

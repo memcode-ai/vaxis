@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"go.rockorager.dev/vaxis/ansi"
+	"github.com/memcode-ai/vaxis/ansi"
 )
 
 type queryResponseWriter struct {

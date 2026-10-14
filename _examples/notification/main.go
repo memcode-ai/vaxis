@@ -1,7 +1,7 @@
 package main
 
 import (
-	"go.rockorager.dev/vaxis"
+	"github.com/memcode-ai/vaxis"
 )
 
 func main() {

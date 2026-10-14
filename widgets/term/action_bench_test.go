@@ -3,7 +3,7 @@ package term
 import (
 	"testing"
 
-	"go.rockorager.dev/vaxis/ansi"
+	"github.com/memcode-ai/vaxis/ansi"
 )
 
 func BenchmarkTerminalActions(b *testing.B) {

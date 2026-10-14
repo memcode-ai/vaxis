@@ -3,7 +3,7 @@ package main
 import (
 	"testing"
 
-	"go.rockorager.dev/vaxis/ui/uitest"
+	"github.com/memcode-ai/vaxis/ui/uitest"
 )
 
 func TestCounterExampleKeyboard(t *testing.T) {

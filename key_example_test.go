@@ -1,7 +1,7 @@
 package vaxis_test
 
 import (
-	"go.rockorager.dev/vaxis"
+	"github.com/memcode-ai/vaxis"
 )
 
 func ExampleKey() {

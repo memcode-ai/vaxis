@@ -4,7 +4,7 @@ import (
 	"io"
 	"time"
 
-	"go.rockorager.dev/vaxis"
+	"github.com/memcode-ai/vaxis"
 )
 
 // App owns a widget tree and dispatches events, layout, painting, and focus.

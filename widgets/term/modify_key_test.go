@@ -4,7 +4,7 @@ import (
 	"testing"
 	"unicode"
 
-	"go.rockorager.dev/vaxis"
+	"github.com/memcode-ai/vaxis"
 )
 
 func TestModifyOtherKeysStateTwoEncodesModifiedText(t *testing.T) {

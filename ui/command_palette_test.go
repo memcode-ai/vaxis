@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"go.rockorager.dev/vaxis"
+	"github.com/memcode-ai/vaxis"
 )
 
 func TestDefaultCommandPaletteFilterRanksMatches(t *testing.T) {

@@ -4,8 +4,8 @@ import (
 	"slices"
 	"testing"
 
-	"go.rockorager.dev/vaxis"
-	"go.rockorager.dev/vaxis/vxfw"
+	"github.com/memcode-ai/vaxis"
+	"github.com/memcode-ai/vaxis/vxfw"
 )
 
 func TestText(t *testing.T) {

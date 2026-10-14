@@ -8,7 +8,7 @@ import (
 	"syscall"
 	"time"
 
-	"go.rockorager.dev/vaxis/log"
+	"github.com/memcode-ai/vaxis/log"
 	"golang.org/x/sys/unix"
 )
 

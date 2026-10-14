@@ -5,7 +5,7 @@ import (
 	"os/exec"
 	"time"
 
-	"go.rockorager.dev/vaxis"
+	"github.com/memcode-ai/vaxis"
 )
 
 func main() {

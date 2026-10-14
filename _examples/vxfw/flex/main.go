@@ -3,11 +3,11 @@ package main
 import (
 	"log"
 
-	"go.rockorager.dev/vaxis"
-	"go.rockorager.dev/vaxis/vxfw"
-	"go.rockorager.dev/vaxis/vxfw/richtext"
-	"go.rockorager.dev/vaxis/vxfw/text"
-	"go.rockorager.dev/vaxis/vxfw/vxlayout"
+	"github.com/memcode-ai/vaxis"
+	"github.com/memcode-ai/vaxis/vxfw"
+	"github.com/memcode-ai/vaxis/vxfw/richtext"
+	"github.com/memcode-ai/vaxis/vxfw/text"
+	"github.com/memcode-ai/vaxis/vxfw/vxlayout"
 )
 
 type App struct {

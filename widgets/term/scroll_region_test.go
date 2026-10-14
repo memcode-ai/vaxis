@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"go.rockorager.dev/vaxis"
+	"github.com/memcode-ai/vaxis"
 )
 
 func TestScrollUpLeftRightRegionPreservesOutsideColumns(t *testing.T) {

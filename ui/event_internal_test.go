@@ -4,7 +4,7 @@ import (
 	"math"
 	"testing"
 
-	"go.rockorager.dev/vaxis"
+	"github.com/memcode-ai/vaxis"
 )
 
 func TestEventContextFractionalMousePointUsesPixelReports(t *testing.T) {

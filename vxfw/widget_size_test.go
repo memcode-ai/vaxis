@@ -4,13 +4,13 @@ import (
 	"strings"
 	"testing"
 
-	"go.rockorager.dev/vaxis"
-	"go.rockorager.dev/vaxis/vxfw"
-	"go.rockorager.dev/vaxis/vxfw/button"
-	"go.rockorager.dev/vaxis/vxfw/center"
-	"go.rockorager.dev/vaxis/vxfw/list"
-	"go.rockorager.dev/vaxis/vxfw/richtext"
-	"go.rockorager.dev/vaxis/vxfw/text"
+	"github.com/memcode-ai/vaxis"
+	"github.com/memcode-ai/vaxis/vxfw"
+	"github.com/memcode-ai/vaxis/vxfw/button"
+	"github.com/memcode-ai/vaxis/vxfw/center"
+	"github.com/memcode-ai/vaxis/vxfw/list"
+	"github.com/memcode-ai/vaxis/vxfw/richtext"
+	"github.com/memcode-ai/vaxis/vxfw/text"
 )
 
 func TestWidgetConstraints(t *testing.T) {

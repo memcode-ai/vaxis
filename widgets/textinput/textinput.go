@@ -5,7 +5,7 @@ import (
 	"strings"
 	"unicode"
 
-	"go.rockorager.dev/vaxis"
+	"github.com/memcode-ai/vaxis"
 )
 
 const scrolloff = 4

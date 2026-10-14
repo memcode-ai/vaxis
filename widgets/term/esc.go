@@ -3,7 +3,7 @@ package term
 import (
 	"slices"
 
-	"go.rockorager.dev/vaxis"
+	"github.com/memcode-ai/vaxis"
 )
 
 func (vt *Model) setProtectedMode(mode protectedMode) {

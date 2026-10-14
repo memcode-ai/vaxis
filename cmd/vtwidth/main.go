@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"go.rockorager.dev/vaxis"
+	"github.com/memcode-ai/vaxis"
 )
 
 type failure struct {

@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"go.rockorager.dev/vaxis/ansi"
+	"github.com/memcode-ai/vaxis/ansi"
 )
 
 func b64(s string) string {

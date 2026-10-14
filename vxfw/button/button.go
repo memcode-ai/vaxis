@@ -1,10 +1,10 @@
 package button
 
 import (
-	"go.rockorager.dev/vaxis"
-	"go.rockorager.dev/vaxis/vxfw"
-	"go.rockorager.dev/vaxis/vxfw/center"
-	"go.rockorager.dev/vaxis/vxfw/text"
+	"github.com/memcode-ai/vaxis"
+	"github.com/memcode-ai/vaxis/vxfw"
+	"github.com/memcode-ai/vaxis/vxfw/center"
+	"github.com/memcode-ai/vaxis/vxfw/text"
 )
 
 type Button struct {

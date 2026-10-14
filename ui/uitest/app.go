@@ -5,8 +5,8 @@ import (
 	"io"
 	"strings"
 
-	"go.rockorager.dev/vaxis"
-	"go.rockorager.dev/vaxis/ui"
+	"github.com/memcode-ai/vaxis"
+	"github.com/memcode-ai/vaxis/ui"
 )
 
 // App wraps a ui.App with a fixed-size painter for tests.

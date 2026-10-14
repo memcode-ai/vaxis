@@ -4,8 +4,8 @@ package image
 import (
 	"math"
 
-	"go.rockorager.dev/vaxis"
-	"go.rockorager.dev/vaxis/vxfw"
+	"github.com/memcode-ai/vaxis"
+	"github.com/memcode-ai/vaxis/vxfw"
 )
 
 // Image displays a vaxis.Image in a vxfw widget tree.

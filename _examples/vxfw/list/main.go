@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"log"
 
-	"go.rockorager.dev/vaxis"
-	"go.rockorager.dev/vaxis/vxfw"
-	"go.rockorager.dev/vaxis/vxfw/list"
-	"go.rockorager.dev/vaxis/vxfw/text"
+	"github.com/memcode-ai/vaxis"
+	"github.com/memcode-ai/vaxis/vxfw"
+	"github.com/memcode-ai/vaxis/vxfw/list"
+	"github.com/memcode-ai/vaxis/vxfw/text"
 )
 
 type App struct {

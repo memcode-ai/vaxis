@@ -13,8 +13,8 @@ import (
 	"sync"
 	"time"
 
-	"go.rockorager.dev/vaxis/ansi"
-	"go.rockorager.dev/vaxis/log"
+	"github.com/memcode-ai/vaxis/ansi"
+	"github.com/memcode-ai/vaxis/log"
 )
 
 type capabilities struct {

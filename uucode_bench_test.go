@@ -4,8 +4,8 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/memcode-ai/vaxis"
 	"github.com/rockorager/go-uucode"
-	"go.rockorager.dev/vaxis"
 )
 
 var (

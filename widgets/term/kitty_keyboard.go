@@ -3,7 +3,7 @@ package term
 import (
 	"fmt"
 
-	"go.rockorager.dev/vaxis/ansi"
+	"github.com/memcode-ai/vaxis/ansi"
 )
 
 const kittyKeyboardStackLen = 8

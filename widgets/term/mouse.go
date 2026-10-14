@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"go.rockorager.dev/vaxis"
-	"go.rockorager.dev/vaxis/ansi"
+	"github.com/memcode-ai/vaxis"
+	"github.com/memcode-ai/vaxis/ansi"
 )
 
 func (vt *Model) handleMouse(msg vaxis.Mouse) string {

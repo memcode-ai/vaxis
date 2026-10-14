@@ -15,11 +15,11 @@ import (
 	"time"
 	"unicode/utf8"
 
+	"github.com/memcode-ai/vaxis"
+	"github.com/memcode-ai/vaxis/ansi"
+	"github.com/memcode-ai/vaxis/log"
+	"github.com/memcode-ai/vaxis/widgets/term/pty"
 	"github.com/rockorager/go-uucode"
-	"go.rockorager.dev/vaxis"
-	"go.rockorager.dev/vaxis/ansi"
-	"go.rockorager.dev/vaxis/log"
-	"go.rockorager.dev/vaxis/widgets/term/pty"
 )
 
 type (
