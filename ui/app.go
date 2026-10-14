@@ -75,6 +75,23 @@ func NewApp(root Widget, opts ...Option) *App {
 	return app
 }
 
+// SetScrollbackAppenders installs scrollback append functions directly, bypassing the
+// normal Runner/Backend wiring. It exists for lightweight harnesses (see ui/uitest) that
+// pump/paint a widget tree without a real backend attached — so a code path that writes to
+// scrollback (a slash-command echo, sysln, etc.) captures instead of hitting the "without
+// primary screen support" panic. A nil argument leaves that appender untouched.
+func (a *App) SetScrollbackAppenders(appendBytes func([]byte), appendStr func(string), appendWriter func() io.Writer) {
+	if appendBytes != nil {
+		a.append = appendBytes
+	}
+	if appendStr != nil {
+		a.appendString = appendStr
+	}
+	if appendWriter != nil {
+		a.appendWriter = appendWriter
+	}
+}
+
 // UpdateRoot replaces the root widget while preserving compatible elements.
 func (a *App) UpdateRoot(root Widget) {
 	a.root = root

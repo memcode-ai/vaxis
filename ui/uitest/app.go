@@ -2,6 +2,7 @@
 package uitest
 
 import (
+	"io"
 	"strings"
 
 	"go.rockorager.dev/vaxis"
@@ -10,14 +11,24 @@ import (
 
 // App wraps a ui.App with a fixed-size painter for tests.
 type App struct {
-	app     *ui.App
-	size    ui.Size
-	painter *ui.Painter
+	app        *ui.App
+	size       ui.Size
+	painter    *ui.Painter
+	scrollback strings.Builder
 }
 
-// New creates a test app mounted with root.
+// New creates a test app mounted with root. Scrollback appends (sysln, slash-command
+// echoes, etc.) are captured rather than left to panic — this harness never runs a real
+// Runner/Backend, so nothing else would service them.
 func New(root ui.Widget) *App {
-	return &App{app: ui.NewApp(root), size: ui.Size{Width: 80, Height: 24}}
+	a := &App{size: ui.Size{Width: 80, Height: 24}}
+	a.app = ui.NewApp(root)
+	a.app.SetScrollbackAppenders(
+		func(b []byte) { a.scrollback.Write(b) },
+		func(s string) { a.scrollback.WriteString(s) },
+		func() io.Writer { return &a.scrollback },
+	)
+	return a
 }
 
 // Pump rebuilds, lays out, and paints the app at width and height.
@@ -85,6 +96,12 @@ func (a *App) Text() string {
 		b.WriteString(cell.Grapheme)
 	}
 	return b.String()
+}
+
+// Scrollback returns everything appended to scrollback so far (sysln output, slash-command
+// echoes, etc.) — the counterpart to Text() for widgets that write outside the painted tree.
+func (a *App) Scrollback() string {
+	return a.scrollback.String()
 }
 
 func firstRune(s string) rune {
