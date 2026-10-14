@@ -5,6 +5,7 @@ package vaxis
 import (
 	"fmt"
 	"os"
+	"time"
 
 	"golang.org/x/sys/unix"
 	"golang.org/x/term"
@@ -93,6 +94,38 @@ func (t *unixTTY) Reset() error {
 		return nil
 	}
 	return term.Restore(int(t.readFile.Fd()), t.state)
+}
+
+// Drain reads and discards any bytes the terminal still has queued for us — the asynchronous
+// replies to queries we send during teardown (the DA1 wake in Suspend, plus any window/text-area
+// geometry reports from a late resize still in flight). It MUST run after the input parser has
+// stopped (so there is no second reader on the fd) and BEFORE the termios is restored to cooked
+// mode: otherwise those replies arrive after we've handed the terminal back and spill into the
+// user's shell as literal escape text (e.g. "8;49;177;735;1239t"). Non-blocking, so an empty
+// buffer returns at once; a couple of short grace rounds catch a reply that's microseconds behind.
+func (t *unixTTY) Drain() {
+	fd := int(t.readFile.Fd())
+	if err := unix.SetNonblock(fd, true); err != nil {
+		return
+	}
+	defer func() { _ = unix.SetNonblock(fd, false) }()
+	buf := make([]byte, 4096)
+	for round := 0; round < 3; round++ {
+		drained := false
+		for {
+			n, err := unix.Read(fd, buf)
+			if n > 0 {
+				drained = true
+				continue
+			}
+			_ = err // EAGAIN (buffer empty) or a benign teardown error → end this pass
+			break
+		}
+		if !drained && round > 0 {
+			return // stayed empty across a grace round → nothing more is coming
+		}
+		time.Sleep(3 * time.Millisecond) // let a just-sent reply land, then sweep again
+	}
 }
 
 func (t *unixTTY) Size() (Resize, error) {

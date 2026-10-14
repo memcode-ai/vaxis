@@ -1951,6 +1951,12 @@ func (vx *Vaxis) Suspend() error {
 
 	signal.Stop(vx.chSigKill)
 	signal.Stop(vx.chSigWinSz)
+	// Swallow the terminal's replies to our teardown queries (the DA1 wake above, plus any late
+	// geometry reports) while we still own the tty in raw mode and the parser is stopped — so they
+	// don't leak into the user's shell as literal escape text after Reset restores cooked mode.
+	if d, ok := vx.tty.(interface{ Drain() }); ok {
+		d.Drain()
+	}
 	_ = vx.tty.Reset()
 	return nil
 }
