@@ -35,7 +35,17 @@ type terminalSizer interface {
 	TerminalSize() Resize
 }
 
-type vaxisBackend struct{ vx *vaxis.Vaxis }
+type vaxisBackend struct {
+	vx *vaxis.Vaxis
+	dq *dispatchQueue
+}
+
+func newVaxisBackend(vx *vaxis.Vaxis) vaxisBackend {
+	return vaxisBackend{
+		vx: vx,
+		dq: newDispatchQueue(func(fn func()) { vx.PostEventBlocking(SyncFunc(fn)) }),
+	}
+}
 
 func (b vaxisBackend) Events() <-chan Event {
 	return b.vx.Events()
@@ -72,7 +82,15 @@ func (b vaxisBackend) Render(p *Painter) error {
 	return nil
 }
 
+// Dispatch schedules fn onto the UI event loop. Routed through the unbounded
+// dispatchQueue: the old direct PostEvent silently DROPPED the fn when the
+// 1024-slot vaxis queue was full (heavy streaming), and a dropped HITL card
+// present wedges the engine forever. Never drops, never blocks the caller.
 func (b vaxisBackend) Dispatch(fn func()) {
+	if b.dq != nil {
+		b.dq.enqueue(fn)
+		return
+	}
 	b.vx.PostEvent(SyncFunc(fn))
 }
 
@@ -109,6 +127,9 @@ func (b vaxisBackend) Notify(title, body string) {
 }
 
 func (b vaxisBackend) Close() error {
+	if b.dq != nil {
+		b.dq.close()
+	}
 	b.vx.Close()
 	return nil
 }
